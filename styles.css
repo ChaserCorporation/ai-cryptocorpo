@@ -1,3 +1,4 @@
+/* Mode sombre (par défaut) */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -5,6 +6,12 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+}
+
+/* Mode clair */
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #222;
 }
 
 nav {
@@ -15,18 +22,8 @@ nav {
     gap: 20px;
 }
 
-nav a {
-    color: #58a6ff;
-    text-decoration: none;
-}
-
-header {
-    padding: 30px;
-    background-color: #161b22;
-}
-
-.container {
-    padding: 20px;
+body.light-mode nav {
+    background-color: #ddd;
 }
 
 button {
@@ -35,4 +32,8 @@ button {
     border: none;
     padding: 10px;
     cursor: pointer;
+}
+
+body.light-mode button {
+    background: #007acc;
 }
