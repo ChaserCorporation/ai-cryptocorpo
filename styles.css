@@ -146,7 +146,7 @@ body:not(.light-mode) #logo-light {
 
 /* Ajuster la taille du logo */
 .logo-container img {
-    width: 150px; /* Taille du logo (modifiable selon tes besoins) */
+    width: 300px; /* Taille du logo (modifiable selon tes besoins) */
     height: auto;
 }
 
