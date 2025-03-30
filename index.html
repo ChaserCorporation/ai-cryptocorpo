@@ -9,47 +9,33 @@
 </head>
 <body>
 
-    <!-- Bannière -->
-    <div class="banner">
-        <div class="banner-overlay">
-            <div class="banner-content">
-                <h1>AI-CryptoCorpo</h1>
-                <p>Pour en savoir plus sur l'IA appliquée à la Crypto !</p>
-                <div class="banner-icons">
-                    <img src="images/Bitcoin.png" alt="Bitcoin" class="token">
-                    <img src="images/Ethereum.png" alt="Ethereum" class="token">
-                    <img src="images/IA.png" alt="IA" class="token">
-                </div>
-            </div>
-        </div>
+    <!-- Bouton Mode Sombre/Clair en haut à droite -->
+    <div class="theme-toggle-container">
+        <button id="theme-toggle">🌙</button>
     </div>
 
-    <!-- Barre de navigation -->
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="articles.html">Articles</a>
-        <a href="contact.html">Contact</a>
-        <button id="theme-toggle">🌙 Mode Sombre</button>
-    </nav>
-
-    <!-- En-tête -->
-    <header>
-    <div class="logo-container">
-        <img src="images/logo-dark.png" alt="Logo Clair" id="logo-dark">
-        <img src="images/logo-light.png" alt="Logo Sombre" id="logo-light" class="hidden">
+    <!-- Menu latéral rétractable -->
+    <div class="sidebar">
+        <button class="menu-toggle">☰</button>
+        <nav class="menu">
+            <a href="index.html">Accueil</a>
+            <a href="articles.html">Articles</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </div>
 
-        <h1>Bienvenue sur AI-CryptoCorpo 🚀</h1>
-        <p>Découvrez comment l’IA révolutionne le monde de la crypto-monnaie.</p>
+    <!-- Bannière plus petite -->
+    <header class="banner">
+        <h1>AI-CryptoCorpo</h1>
+        <p>Explorez l’IA appliquée à la Crypto.</p>
     </header>
 
     <!-- Contenu principal -->
     <div class="container">
-        <img src="https://source.unsplash.com/800x400/?crypto,ai" alt="Crypto IA" class="hero-image">
+        <img src="https://source.unsplash.com/800x400/?ai,technology" alt="Crypto IA" class="hero-image">
         <p>Rejoignez la révolution numérique avec des analyses et outils basés sur l’IA.</p>
         <a href="articles.html" class="btn">Voir les articles</a>
     </div>
 
 </body>
 </html>
-
