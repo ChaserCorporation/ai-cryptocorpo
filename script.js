@@ -13,4 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     menuToggle.addEventListener("click", function () {
         sidebar.classList.toggle("open");
     });
+
+    // Vérifier si on est en mode clair au chargement de la page
+    if (document.body.classList.contains("light-mode")) {
+        themeToggle.textContent = "☀️";
+    }
 });
