@@ -1,30 +1,33 @@
-/* Global */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #0d1117;
-    color: #fff;
-    margin: 0;
-    padding: 0;
+/* 🌟 Titre en haut à gauche */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #161b22;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-/* Mode clair */
-body.light-mode {
-    background-color: #f4f4f4;
+.site-title {
+    font-size: 1.8em;
+    color: white;
+    font-weight: bold;
+}
+
+/* Mode clair - rendre le titre visible */
+body.light-mode .site-title {
     color: #222;
 }
 
-/* 🔥 Mode sombre/clair (Switch en haut à droite) */
-.theme-toggle-container {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-}
-
+/* 🔥 Mode sombre/clair en haut à droite */
 #theme-toggle {
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     color: #fff;
 }
@@ -37,7 +40,7 @@ body.light-mode #theme-toggle {
 .sidebar {
     position: fixed;
     left: -220px; /* Caché par défaut */
-    top: 0;
+    top: 50px; /* Ajusté pour éviter de cacher le titre */
     width: 200px;
     height: 100%;
     background: #161b22;
@@ -79,19 +82,14 @@ body.light-mode #theme-toggle {
 
 /* 🌟 Bannière plus moderne */
 .banner {
+    margin-top: 60px; /* Ajuste l’espace sous le menu */
     background: url('https://source.unsplash.com/1600x400/?technology') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 50px 20px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
 }
 
-.banner h1 {
-    font-size: 2.5em;
+.banner h2 {
+    font-size: 1.5em;
     text-shadow: 0 0 10px #fff;
-}
-
-.banner p {
-    font-size: 1.2em;
-    opacity: 0.8;
 }
