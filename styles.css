@@ -114,3 +114,25 @@ button {
 body.light-mode button {
     background: #007acc;
 }
+
+/*Adaptation Logo en fonction du mode*/
+.hidden {
+    display: none;
+}
+
+body.light-mode #logo-dark {
+    display: block;
+}
+
+body.light-mode #logo-light {
+    display: none;
+}
+
+body:not(.light-mode) #logo-dark {
+    display: none;
+}
+
+body:not(.light-mode) #logo-light {
+    display: block;
+}
+
