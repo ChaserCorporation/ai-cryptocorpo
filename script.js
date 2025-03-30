@@ -1,21 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Mode sombre/clair
-    const themeToggle = document.getElementById("theme-toggle");
+    const sidebar = document.querySelector(".sidebar");
+    const toggleButton = document.querySelector(".menu-toggle");
+    const themeToggle = document.querySelector("#theme-toggle");
+
+    // Gestion du menu rétractable
+    toggleButton.addEventListener("click", function () {
+        sidebar.classList.toggle("open"); // Ajoute ou enlève la classe "open"
+    });
+
+    // Gestion du mode sombre/clair
     themeToggle.addEventListener("click", function () {
         document.body.classList.toggle("light-mode");
-        themeToggle.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+
+        // Changer l'icône du bouton selon le mode actif
+        if (document.body.classList.contains("light-mode")) {
+            themeToggle.textContent = "🌞"; // Mode clair
+        } else {
+            themeToggle.textContent = "🌙"; // Mode sombre
+        }
     });
-
-    // Menu latéral rétractable
-    const menuToggle = document.querySelector(".menu-toggle");
-    const sidebar = document.querySelector(".sidebar");
-
-    menuToggle.addEventListener("click", function () {
-        sidebar.classList.toggle("open");
-    });
-
-    // Vérifier si on est en mode clair au chargement de la page
-    if (document.body.classList.contains("light-mode")) {
-        themeToggle.textContent = "☀️";
-    }
 });
