@@ -136,3 +136,17 @@ body:not(.light-mode) #logo-light {
     display: block;
 }
 
+/* Centrer le logo */
+.logo-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    margin-top: 20px; /* Ajuste selon ton design */
+}
+
+/* Ajuster la taille du logo */
+.logo-container img {
+    width: 150px; /* Taille du logo (modifiable selon tes besoins) */
+    height: auto;
+}
+
