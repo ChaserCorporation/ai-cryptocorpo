@@ -1,81 +1,4 @@
-/* Style de la bannière */
-.banner {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  background: linear-gradient(135deg, #8a2be2, #00f, #0f0); /* Violet IA, bleu néon et vert crypto */
-  background-size: 400% 400%;
-  animation: gradientShift 10s ease infinite;
-  overflow: hidden;
-}
-
-/* Superposition pour effet "néon" et ambiance sombre */
-.banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-/* Contenu centré */
-.banner-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-/* Titre et slogan avec effet néon */
-.banner-content h1 {
-  font-size: 3em;
-  text-transform: uppercase;
-  margin: 0;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00f, 0 0 40px #00f;
-}
-
-.banner-content p {
-  font-size: 1.2em;
-  margin: 10px 0 20px;
-  text-shadow: 0 0 8px #fff, 0 0 12px #8a2be2;
-}
-
-/* Icônes des jetons */
-.banner-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.banner-icons img {
-  width: 50px;
-  height: 50px;
-  filter: drop-shadow(0 0 5px #fff);
-  transition: transform 0.3s;
-}
-
-.banner-icons img:hover {
-  transform: scale(1.1);
-}
-
-/* Animation du dégradé de fond */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Mode sombre (par défaut) */
+/* Global */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -91,19 +14,57 @@ body.light-mode {
     color: #222;
 }
 
-nav {
-    background-color: #161b22;
-    padding: 15px;
+/* 🔥 Mode sombre/clair (Switch en haut à droite) */
+.theme-toggle-container {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+body.light-mode #theme-toggle {
+    color: #222;
+}
+
+/* 🎭 Menu latéral rétractable */
+.sidebar {
+    position: fixed;
+    left: -220px; /* Caché par défaut */
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: #161b22;
+    padding-top: 20px;
+    transition: left 0.3s;
+}
+
+.sidebar .menu {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
 }
 
-body.light-mode nav {
-    background-color: #ddd;
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
 }
 
-button {
+.sidebar a:hover {
+    background: #238636;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 10px;
+    right: -40px;
     background: #238636;
     color: white;
     border: none;
@@ -111,42 +72,26 @@ button {
     cursor: pointer;
 }
 
-body.light-mode button {
-    background: #007acc;
+/* Ouvrir le menu */
+.sidebar.open {
+    left: 0;
 }
 
-/*Adaptation Logo en fonction du mode*/
-.hidden {
-    display: none;
+/* 🌟 Bannière plus moderne */
+.banner {
+    background: url('https://source.unsplash.com/1600x400/?technology') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-body.light-mode #logo-dark {
-    display: block;
+.banner h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 10px #fff;
 }
 
-body.light-mode #logo-light {
-    display: none;
+.banner p {
+    font-size: 1.2em;
+    opacity: 0.8;
 }
-
-body:not(.light-mode) #logo-dark {
-    display: none;
-}
-
-body:not(.light-mode) #logo-light {
-    display: block;
-}
-
-/* Centrer le logo */
-.logo-container {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    margin-top: 20px; /* Ajuste selon ton design */
-}
-
-/* Ajuster la taille du logo */
-.logo-container img {
-    width: 300px; /* Taille du logo (modifiable selon tes besoins) */
-    height: auto;
-}
-
