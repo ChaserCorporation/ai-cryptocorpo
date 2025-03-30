@@ -1,3 +1,80 @@
+/* Style de la bannière */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, #8a2be2, #00f, #0f0); /* Violet IA, bleu néon et vert crypto */
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  overflow: hidden;
+}
+
+/* Superposition pour effet "néon" et ambiance sombre */
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Contenu centré */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Titre et slogan avec effet néon */
+.banner-content h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00f, 0 0 40px #00f;
+}
+
+.banner-content p {
+  font-size: 1.2em;
+  margin: 10px 0 20px;
+  text-shadow: 0 0 8px #fff, 0 0 12px #8a2be2;
+}
+
+/* Icônes des jetons */
+.banner-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.banner-icons img {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 5px #fff);
+  transition: transform 0.3s;
+}
+
+.banner-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Animation du dégradé de fond */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Mode sombre (par défaut) */
 body {
     font-family: Arial, sans-serif;
