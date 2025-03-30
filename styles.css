@@ -55,6 +55,7 @@
     height: auto;
     display: block; /* S'assure qu'elles s'affichent */
     margin: 10px auto; /* Centre l’image */
+}
 
 .banner-icons img {
   width: 50px;
