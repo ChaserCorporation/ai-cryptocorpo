@@ -28,6 +28,10 @@ body.light-mode {
     align-items: center;
     padding: 15px 20px;
     background: #161b22;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .site-title {
@@ -48,17 +52,21 @@ body.light-mode #theme-toggle {
 }
 
 /* ======================== */
-/* MENU LATÉRAL */
+/* MENU LATÉRAL RÉTRACTABLE */
 /* ======================== */
 .sidebar {
     position: fixed;
-    left: 0;
+    left: -220px; /* Caché par défaut */
     top: 0;
     height: 100%;
     width: 200px;
     background: #1a1f25;
     padding-top: 60px;
-    transition: transform 0.3s ease;
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar.open {
+    left: 0; /* Quand ouvert */
 }
 
 .menu {
@@ -81,12 +89,18 @@ body.light-mode #theme-toggle {
 .menu-toggle {
     position: absolute;
     top: 15px;
-    right: -40px;
+    right: -50px;
     background: #238636;
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0 5px 5px 0;
+}
+
+.menu-toggle:hover {
+    background: #1a4d29;
 }
 
 /* ======================== */
@@ -110,6 +124,7 @@ body.light-mode #theme-toggle {
 .container {
     margin-left: 200px;
     padding: 20px;
+    margin-top: 80px; /* Décalage pour éviter le chevauchement avec le top-bar */
 }
 
 .hero-image {
@@ -164,3 +179,4 @@ body.light-mode .btn {
 body.light-mode .btn:hover {
     background: #005f99;
 }
+
